@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<style>
+    * {
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+
+    html {
+        height: 100%;
+        background-color: black;
+    }
+
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        /* position: relative; */
+        /* background: linear-gradient(135deg, rgba(36, 46, 77, .9), rgba(137, 126, 121, .9)); */
+        font-family: 'Roboto', helvetica, arial, sans-serif;
+        font-size: 1.5em;
+    }
+
+    body:before {
+        content: '';
+        position: absolute;
+        background-image: url(/static/img/lala.jpg);
+        opacity: 0.3;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+        padding: 2em;
+        position: relative;
+        background: rgba(0, 0, 0, .15);
+    }
+
+    form:before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        height: 2px;
+        width: 100%;
+        background: linear-gradient(to right, #35c3c1, #00d6b7);
+    }
+
+    @media screen and (min-width: 600px) {
+        .login-form {
+            width: 50vw;
+            max-width: 15em;
+        }
+    }
+
+    .flex-row {
+        display: flex;
+        margin-bottom: 1em;
+    }
+
+    .lf--label {
+        width: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5f6f8;
+        cursor: pointer;
+    }
+
+    .lf--input {
+        flex: 1;
+        padding: 1em;
+        border: 0;
+        color: #8f8f8f;
+        font-size: 1rem;
+    }
+
+    .lf--input:focus {
+        outline: none;
+        transition: transform 0.15s ease;
+        transform: scale(1.1);
+    }
+
+    .lf--submit {
+        display: block;
+        padding: 1em;
+        width: 100%;
+        background: linear-gradient(to right, #35c3c1, #00d6b7);
+        border: 0;
+        color: #fff;
+        cursor: pointer;
+        font-size: 0.75em;
+        font-weight: 600;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, .2);
+    }
+
+    .lf--submit:focus {
+        outline: none;
+        transition: transform 0.15s ease;
+        transform: scale(1.1);
+    }
+
+    .lf--forgot {
+        margin-top: 1em;
+        color: #00d6b7;
+        font-size: 0.65em;
+        text-align: left;
+        position: relative;
+    }
+
+    ::placeholder {
+        color: #8f8f8f;
+    }
+</style>
+
+<body>
+    <section>
+
+        <form method="POST" action="">
+            {%csrf_token%}
+            <div class="flex-row">
+                <label class="lf--label" for="id_username">
+                </label>
+                <input class='lf--input' placeholder='Username' type="text" name="username" maxlength="150"
+                    autocapitalize="none" autocomplete="username" autofocus="" required="" id="id_username">
+            </div>
+            <span class="lf--forgot">
+                Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.
+            </span>
+            <ul class='lf--forgot'>
+                <li>Your password can’t be too similar to your other personal information.</li>
+                <li>Your password must contain at least 8 characters.</li>
+                <li>Your password can’t be a commonly used password.</li>
+                <li>Your password can’t be entirely numeric.</li>
+            </ul>
+            <div class="flex-row">
+                <label class="lf--label" for="id_password1">
+                </label>
+                <input class='lf--input' placeholder='Password' type="password" name="password1"
+                    autocomplete="new-password" required="" id="id_password1">
+            </div>
+            <div class="flex-row">
+
+                <label class="lf--label" for="id_password2">
+                </label>
+                <input class='lf--input' placeholder='Confirm Password' type="password" name="password2"
+                    autocomplete="new-password" required="" id="id_password2">
+            </div>
+            <span class="lf--forgot">Enter the same password as before, for verification.</span>
+
+            <input class='lf--submit' type='submit' value='Register'>
+        </form>
+    </section>
+</body>
+
+</html>

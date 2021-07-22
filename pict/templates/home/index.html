@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Resource Website</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: rgb(236, 233, 233);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    }
+
+    nav::before {
+        background: url(/static/img/lala.jpg) no-repeat center center/cover;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.3;
+    }
+
+    nav {
+        min-height: 30vh;
+        margin-left: 1.2vw;
+    }
+
+    .description {
+        display: grid;
+        justify-content: center;
+        place-content: center;
+        text-align: center;
+        min-height: vh;
+    }
+
+    .title {
+        font-size: 4.3vw;
+    }
+
+    .paragraph {
+        font-size: 1.5vw;
+        margin-left: 7vw;
+        margin-right: 7vw;
+    }
+
+    nav ul {
+        padding: 5px;
+        display: flex;
+        justify-content: left;
+        list-style: none;
+    }
+
+    nav ul li {
+        padding: 0.7vw;
+    }
+
+    nav ul li a {
+        font-size: 1.5vw;
+        color: #ffffff;
+        text-decoration: none;
+        vertical-align: middle;
+    }
+
+    nav ul li:hover {
+        text-decoration: none;
+        cursor: pointer;
+        background-color: rgb(243, 226, 189);
+        border-radius: 15px;
+        transition: 0.5s;
+    }
+
+    nav ul li a:hover {
+        color: #000000;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        /*code for responsiveness*/
+        .title {
+            font-size: 5.3vw;
+        }
+
+        .ourteam{
+            font-size: 5vw;
+        }
+
+        .paragraph {
+            margin-left: 12vw;
+            margin-right: 12vw;
+            font-size: 1.7vw;
+        }
+
+        nav {
+            min-height: 33vh;
+        }
+
+        nav ul li a {
+            font-size: 2vh;
+        }
+
+        nav ul {
+            height: 22vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+    }
+    @media only screen and (max-width: 984px) {
+
+        /*code for responsiveness*/
+        nav{
+            min-height: 30vh;
+        }
+
+    }
+
+    h1 u {
+        font-size: 3vw;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* for team members */
+    .team1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 1vw;
+
+    }
+
+    .team1 .members {
+        padding: 1vw;
+        border-radius: 28px;
+        background: #777474;
+        text-align: center;
+    }
+
+    .team2 {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr 1fr;
+        grid-column-gap: 1vw;
+
+    }
+
+    .team2 .members {
+        padding: 1vw;
+        border-radius: 28px;
+        background: #777474;
+        text-align: center;
+    }
+
+    .member {
+        background: none;
+    }
+
+    img {
+        height: 14vw;
+        margin: auto;
+        display: block;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    #blank1 {
+        background: none;
+    }
+
+    #blank2 {
+        background: none;
+    }
+
+    section div h2 {
+        font-size: 2vw;
+    }
+</style>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            {% if user.is_authenticated %}
+            <li class="navbar_item">
+                <a href="first_year">
+                    First Year
+                </a>
+            </li>
+            <li class="navbar_item">
+                <a href="second_year">
+                    Second Year
+                </a>
+            </li>
+            <li class="navbar_item">
+                <a href="third_year">
+                    Third Year
+                </a>
+            </li>
+            <li class="navbar_item">
+                <a href="final_year">
+                    Fourth Year
+                </a>
+            </li>
+            <li class="navbar_item">
+                <a href="useful_links">
+                    Useful Links
+                </a>
+
+            <li class="navbar_item">
+                <a href="{% url 'logout' %}">
+                    Logout
+                </a>
+            {% else %}
+            <li class="navbar_item">
+                <a href="{% url 'register' %}">
+                    Register
+                </a>
+            <li class="navbar_item">
+                <a href="{% url 'login' %}">
+                    Login
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="description center">
+        <h1 class="title center">
+            PICT Study Materials
+        </h1>
+        <p class="paragraph center">
+            Welcome to PICT notes!! PICT notes is a free to use Website created by students of PICT to help students
+            attain notes hassle free on a single platform. We strive to provide you quality reference material. You can
+            get books, handwritten notes, presentations, word documents based on your year and subject. We made this
+            site to simplify the process of getting study material and most importantly save your valuable time as this
+            is the stop for everything and anything you need. Except providing study material we also provide you with
+            resources to acquire extra skills like coding for instance. We have also added a section of Stock market as
+            financial literacy is important in this modern world and keep you up for the challenges of future. With your
+            support it will fuel us to provide you best each time we update this website. We appreciate you for visiting
+            our website. Thank you!
+        </p>
+    </div>
+    <section>
+        <h1 class="center ourteam">
+            <u class="ourteam">Our Team</u>
+        </h1>
+        <div class="team1">
+            <h2 class="members member1">
+                <img src="/static/img/siddharth.jpeg" alt="Siddharth Singh">
+                Siddharth Singh
+            </h2>
+            <h2 class="members member2">
+                <img src="/static/img/apoorva.jpeg" alt="Apoorva Kulkarni">
+                Apoorva Kulkarni
+            </h2>
+            <h2 class="members member3">
+                <img src="/static/img/archies.jpeg" alt="Archies Parab">
+                Archies Parab
+            </h2>
+        </div>
+        <div class="team2">
+            <h2 id="blank1" class="members member"></h2>
+            <h2 class="members member4">
+                <img src="/static/img/shravani.jpeg" alt="Shravani Deshpande">
+                Shravani Deshpande
+            </h2>
+            <h2 class="members member5">
+                <img src="/static/img/omkar.jpeg" alt="Omkar Pawar">
+                Omkar Pawar
+            </h2>
+            <h2 id="blank2" class="members member"></h2>
+        </div>
+    </section>
+</body>
+
+</html>

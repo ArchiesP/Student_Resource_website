@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Useful Links</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+        }
+
+        h1::before {
+            background: url(/static/img/back4.jpg) no-repeat center center/cover;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        h1 {
+            padding-left: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+
+        #nam {
+            font-size: 20px;
+            padding-left: 5px;
+            padding-top: 3px;
+            margin-left: 10px;
+            color: white;
+            height: 30px;
+            width: 250px;
+            border-style: outset;
+        }
+
+        #descri {
+            padding-left: 10px;
+            font: italic;
+            font-size: 15px;
+            color: white;
+            font-weight: 800;
+            height: 60px;
+            width: 900px;
+        }
+    </style>
+</head>
+
+<body background="">
+{% if user.is_authenticated %}
+    <h1>Useful links for Students </h1>
+    <p id="nam">
+        <a href=" https://youtube.com/c/CodeWithHarry">1. Code with Harry</a>
+    </p>
+    <p id="descri">
+        The word coding seems to be heard with increasingly regularity in today’s workplace, and for many it leads to
+        two obvious questions: what is computer coding,and what is code?
+        Learning code is, in a broad sense, like learning any language – or to be more accurate, a family of languages.
+        using this youtube channel you can learn coding in a reaaly easy n interesting way.
+    </p>
+
+    <p id="nam">
+        <a href="https://youtube.com/c/cs50">2. CS50</a>
+    </p>
+    <p id="descri">
+        Coding is a basic literacy in the digital age, and it is important for Students to be able to work with and
+        understand the technology around them. CS50 is an on-campus and online introductory course on computer science
+        taught at Harvard University and Yale University.
+    </p>
+
+    <p id="nam">
+        <a href="https://youtube.com/c/SIDDHARTHBHANUSHALI">3. Stock market for begginers</a>
+    </p>
+    <p id="descri">
+        Students being the beginners in investing, even a small investment, if made properly can reap huge profits in
+        the future and can act as a source of regular income.This youtube channel will intriduce you with basics of
+        stock market.
+    </p>
+
+    <p id="nam">
+        <a href="https://finshots.in/">4. Must read financial news</a>
+    </p>
+    <p id="descri">
+        Students being the beginners in investing, even a small investment, if made properly can reap huge profits in
+        the future and can act as a source of regular income. This site will help students stay updated.
+    </p>
+
+    <p id="nam">
+        <a href=" https://www.startupindia.gov.in/content/sih/en/newsfeed.html">5. Startups in India
+        </a>
+    </p>
+    <p id="descri">
+        Reading news helps you to distinguish truth from falsehoods. Reading news can enhance your creativity. Reading
+        news gives you leads to connect with remarkable people and events. Reading news is a source of inspiration,
+        knowledge, and finding solutions.Above link provides various info about startups in India.
+    </p>
+    <p id="nam">
+        <a href="https://ndl.iitkgp.ac.in/homestudy/engineering%22%3E">6. Digital Library </a>
+    </p>
+    <p id="descri">
+        This contains lecture videos and notes of NPTEL/SWAYAM courses, presentations used by faculties in classes,
+        online class lectures, questions/solutions of common subjects for students of all engineering discipline.
+    </p>
+{% else %}
+    <li>You are logged out</li>
+{% endif %}
+</body>
+
+</html>
